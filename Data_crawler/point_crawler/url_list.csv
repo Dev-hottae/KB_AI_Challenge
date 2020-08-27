@@ -1,0 +1,108 @@
+﻿NAME,URLs
+국내 금,https://finance.naver.com/marketindex/goldDailyQuote.nhn?
+국제 금,https://finance.naver.com/marketindex/worldDailyQuote.nhn?marketindexCd=CMDT_GC&fdtc=2
+백금,https://finance.naver.com/marketindex/worldDailyQuote.nhn?marketindexCd=CMDT_PL&fdtc=2
+은,https://finance.naver.com/marketindex/worldDailyQuote.nhn?marketindexCd=CMDT_SI&fdtc=2
+팔라듐,https://finance.naver.com/marketindex/worldDailyQuote.nhn?marketindexCd=CMDT_PA&fdtc=2
+휘발유,https://finance.naver.com/marketindex/oilDailyQuote.nhn?marketindexCd=OIL_GSL
+고급휘발유,https://finance.naver.com/marketindex/oilDailyQuote.nhn?marketindexCd=OIL_HGSL
+경유,https://finance.naver.com/marketindex/oilDailyQuote.nhn?marketindexCd=OIL_LO
+두바이유,https://finance.naver.com/marketindex/worldDailyQuote.nhn?marketindexCd=OIL_DU&fdtc=2
+WTI(서부텍사스유),https://finance.naver.com/marketindex/worldDailyQuote.nhn?marketindexCd=OIL_CL&fdtc=2
+난방유,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_HO
+천연가스,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_NG
+구리,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_CDY
+납,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_PDY
+아연,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_ZDY
+니켈,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_NDY
+알루미늄합금,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_AAY
+주석,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_SDY
+옥수수,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_C
+대두,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_S
+대두박,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_SM
+대두유,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_BO
+소맥,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_W
+쌀,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=2&marketindexCd=CMDT_RR
+코스피,https://finance.naver.com/sise/sise_index_day.nhn?code=KOSPI
+코스닥,https://finance.naver.com/sise/sise_index_day.nhn?code=KOSDAQ
+선물,https://finance.naver.com/sise/sise_index_day.nhn?code=FUT
+코스피200,https://finance.naver.com/sise/sise_index_day.nhn?code=KPI200
+CD금리(91일),https://finance.naver.com/marketindex/interestDailyQuote.nhn?marketindexCd=IRR_CD91
+콜금리(1일),https://finance.naver.com/marketindex/interestDailyQuote.nhn?marketindexCd=IRR_CALL
+국고채(3년),https://finance.naver.com/marketindex/interestDailyQuote.nhn?marketindexCd=IRR_GOVT03Y
+회사채(3년),https://finance.naver.com/marketindex/interestDailyQuote.nhn?marketindexCd=IRR_CORP03Y
+달러인덱스,https://finance.naver.com/marketindex/worldExchangeDetail.nhn?marketindexCd=FX_USDX&fdtc=4
+달러/영국 파운드,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_GBPUSD
+달러/유로,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_EURUSD
+달러/호주 달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_AUDUSD
+홍콩 달러/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDHKD
+일본 엔/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDJPY
+캐나다 달러/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDCAD
+아랍에미리트 디르함/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDAED
+네델란드 안틸레/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDANG
+아르헨티나 페소/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDARS
+불가리아 레브/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDBGN
+브라질 레알/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDBRL
+스위스 프랑/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDCHF
+칠레 페소/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDCLP
+중국 위안/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDCNY
+콜롬비아 페소/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDCOP
+체코 크로나/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDCZK
+덴마크 크로네/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDDKK
+이집트 파운드/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDEGP
+크로아티아 쿠나/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDHRK
+헝가리 포린트/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDHUF
+인도네시아 루피아/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDIDR
+이스라엘 세켈/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDILS
+인도 루피/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDINR
+이란 리얄/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDIRR
+요르단 디나르/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDJOD
+모로코 디르함/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDMAD
+마카오 파타카/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDMOP
+멕시코 뉴페소/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDMXN
+감비아 달라시/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDGMD
+과테말라 케트잘/달러,https://finance.naver.com/marketindex/worldDailyQuote.nhn?fdtc=4&marketindexCd=FX_USDGTQ
+미국/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_USDKRW
+유럽연합/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_EURKRW
+일본/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_JPYKRW
+중국/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_CNYKRW
+홍콩/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_HKDKRW
+대만/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_TWDKRW
+영국/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_GBPKRW
+오만/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_OMRKRW
+캐나다/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_CADKRW
+스위스/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_CHFKRW
+스웨덴/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_SEKKRW
+호주/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_AUDKRW
+뉴질랜드/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_NZDKRW
+체코/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_CZKKRW
+칠레/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_CLPKRW
+터키/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_TRYKRW
+몽골/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_MNTKRW
+이스라엘/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_ILSKRW
+덴마크/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_DKKKRW
+노르웨이/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_NOKKRW
+사우디아라비아/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_SARKRW
+쿠웨이트/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_KWDKRW
+바레인/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_BHDKRW
+아랍에미리트/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_AEDKRW
+요르단/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_JODKRW
+이집트/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_EGPKRW
+태국/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_THBKRW
+싱가포르/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_SGDKRW
+말레이시아/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_MYRKRW
+인도네시아/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_IDRKRW
+카타르/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_QARKRW
+카자흐스탄/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_KZTKRW
+브루나이/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_BNDKRW
+인도/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_INRKRW
+파키스탄/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_PKRKRW
+방글라데시/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_BDTKRW
+필리핀/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_PHPKRW
+멕시코/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_MXNKRW
+브라질/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_BRLKRW
+베트남/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_VNDKRW
+남아프리카/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_ZARKRW
+러시아/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_RUBKRW
+헝가리/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_HUFKRW
+폴란드/원,https://finance.naver.com/marketindex/exchangeDailyQuote.nhn?marketindexCd=FX_PLNKRW
