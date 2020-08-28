@@ -177,10 +177,10 @@ class ExampleSpider(scrapy.Spider):
 
         yield {
             'date': re.search('[0-9]{4}[\.\-]?[0-9]{2}[\.\-]?[0-9]{2}',
-                              response.css('div#article div.vc_top div.info ul li::text').getall()[0]).group(),
+                              response.css('div#article div.info ul.info2 li.date::text').get()).group(),
             'office': '머니투데이',
             'url' : url,
-            'text': ' '.join(response.css('div#gisa_section div#textBody::text').getall()).strip().replace('\n', ' ').replace('\\',
+            'text': ' '.join(response.css('div#textBody::text').getall()).strip().replace('\n', ' ').replace('\\',
                                                                                                               ' ').replace(
                 '\"', ' ').replace('\r', ' ').replace('\t', ' ').replace('  ', ' ')
         }
@@ -190,10 +190,10 @@ class ExampleSpider(scrapy.Spider):
 
         yield {
             'date': re.search('[0-9]{4}[\.\-]?[0-9]{2}[\.\-]?[0-9]{2}',
-                              response.css('p.user_data::text').getall()[0]).group(),
+                              response.css('div.area_title p.user_data::text').getall()[1]).group(),
             'office': '아시아경제',
             'url': url,
-            'text': ' '.join(response.css('div#txt_area::text').getall()).strip().replace('\n',
+            'text': ' '.join(response.css('div#txt_area > p::text').getall()).strip().replace('\n',
                                                                                                            ' ').replace(
                 '\\',
                 ' ').replace(
@@ -205,10 +205,10 @@ class ExampleSpider(scrapy.Spider):
 
         yield {
             'date': re.search('[0-9]{4}[\.\-]?[0-9]{2}[\.\-]?[0-9]{2}',
-                              response.css('div.view_top_t2 ul li.ellipsis::text').getall()[0]).group(),
-            'office': '아시아경제',
+                              ' '.join(response.css('div.view_top_t2 ul li.ellipsis::text').getall())).group(),
+            'office': '헤럴드경제',
             'url': url,
-            'text': ' '.join(response.css('div#txt_area::text').getall()).strip().replace('\n',
+            'text': ' '.join(response.css('div#content_ADTOM div#articleText > p::text').getall()).strip().replace('\n',
                                                                                           ' ').replace(
                 '\\',
                 ' ').replace(
@@ -220,7 +220,7 @@ class ExampleSpider(scrapy.Spider):
 
         yield {
             'date': re.search('[0-9]{4}[\.\-]?[0-9]{2}[\.\-]?[0-9]{2}',
-                              response.css('div.byline::text').getall()[0]).group(),
+                              response.css('div.view_hd div.byline em::text').getall()[1]).group(),
             'office': '파이낸셜뉴스',
             'url': url,
             'text': ' '.join(response.css('div#article_content::text').getall()).strip().replace('\n',
@@ -235,7 +235,7 @@ class ExampleSpider(scrapy.Spider):
 
         yield {
             'date': re.search('[0-9]{4}[\.\-]?[0-9]{2}[\.\-]?[0-9]{2}',
-                              response.css('div.date_info span.date-published span.num::text').getall()[0]).group(),
+                              response.css('div#container div.date_info span.num::text').get()).group(),
             'office': '한국경제',
             'url': url,
             'text': ' '.join(response.css('div#articletxt::text').getall()).strip().replace('\n',
@@ -250,7 +250,7 @@ class ExampleSpider(scrapy.Spider):
 
         yield {
             'date': re.search('[0-9]{4}[\.\-]?[0-9]{2}[\.\-]?[0-9]{2}',
-                              response.css('div.news_title_text ul li.lasttime::text').getall()[0]).group(),
+                              response.css('li.lasttime::text').get()).group(),
             'office': '매일경제',
             'url': url,
             'text': ' '.join(response.css('div#article_body div.art_txt::text').getall()).strip().replace('\n',
