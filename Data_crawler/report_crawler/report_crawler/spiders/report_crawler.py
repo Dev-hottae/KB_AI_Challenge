@@ -10,7 +10,6 @@ import requests
 class ReportSpider(scrapy.Spider):
 
     name = "report"
-    report_num = 0
     now_page = 1
     urls = [
         # 시황정보 0
@@ -26,6 +25,8 @@ class ReportSpider(scrapy.Spider):
         # 채권분석 5
         'https://finance.naver.com/research/debenture_list.nhn?&page={}'
     ]
+    report_num = 1
+
     temp = ''
 
     def start_requests(self):
@@ -39,35 +40,50 @@ class ReportSpider(scrapy.Spider):
 
     def parse(self, response):
         reports = response.css('table.type_1 tr').getall()[2:]
+        
         if ReportSpider.temp == reports:
+            ReportSpider.report_num += 1
+            ReportSpider.now_page = 1
+            yield scrapy.Request(ReportSpider.urls[ReportSpider.report_num].format(ReportSpider.now_page), callback=self.parse)
             return
         
         if reports != None:
             for report in reports:
-                # 타임 브레이커
-                # time.sleep(0.03)
                 sp = BeautifulSoup(report, 'html.parser').select('td')
-                
-                try:
-                    with open('bond.pdf', 'wb') as f:
-                        f.write(requests.get(sp[2].select_one('a').attrs['href']).content)
-                    contents = str(parser.from_file('bond.pdf')['content']).strip()
+                if (ReportSpider.report_num != 2) | (ReportSpider.report_num != 3):
+                    try:
+                        with open('bond.pdf', 'wb') as f:
+                            f.write(requests.get(sp[2].select_one('a').attrs['href']).content)
+                        contents = str(parser.from_file('bond.pdf')['content']).strip()
 
-                    yield ReportSpider.fm.add_data({
-                            # Datas
-                            'name' : sp[0].text,
-                            'company' : sp[1].text,
-                            'content' : contents,
-                            'date' : sp[3].text,
-                            'click' : sp[4].text
-                        })
-                except:
-                    continue
-            # pdf_temp = requests.get(result.select_one('a').attrs['href'])
+                        yield ReportSpider.fm.add_data({
+                                # Datas
+                                'name' : sp[0].text,
+                                'company' : sp[1].text,
+                                'content' : contents,
+                                'date' : sp[3].text,
+                                'click' : sp[4].text
+                            })
+                    except:
+                        continue
+                else:
+                    try:
+                        with open('bond.pdf', 'wb') as f:
+                            f.write(requests.get(sp[3].select_one('a').attrs['href']).content)
+                        contents = str(parser.from_file('bond.pdf')['content']).strip()
 
-            # with open('bond.pdf', 'wb') as f:
-            #     f.write(pdf_temp.content)
-
+                        yield ReportSpider.fm.add_data({
+                                # Datas
+                                'category' : sp[0].text,
+                                'name' : sp[1].text,
+                                'company' : sp[2].text,
+                                'content' : contents,
+                                'date' : sp[4].text,
+                                'click' : sp[5].text
+                            })
+                    except:
+                        continue
+        
         ReportSpider.temp = reports
         ReportSpider.now_page +=1
-        # yield scrapy.Request(ReportSpider.urls[ReportSpider.report_num].format(ReportSpider.now_page), callback=self.parse)
+        yield scrapy.Request(ReportSpider.urls[ReportSpider.report_num].format(ReportSpider.now_page), callback=self.parse)
