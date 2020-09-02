@@ -1,15 +1,35 @@
+
 import requests
-import re
+import pandas as pd
+from tqdm import tqdm
+import json
 from bs4 import BeautifulSoup
 
-url = 'https://www.fnnews.com/news/202008241022222988'
+url = 'https://finance.naver.com/marketindex/interestDailyQuote.nhn?marketindexCd=IRR_CORP03Y&page={}'
 
-res = requests.get(url)
+data_list = []
+for i in tqdm(range(1, 600)):
+    # print(i)
+    page_url = url.format(i)
 
-bs = BeautifulSoup(res.text, 'html.parser')
+    res = requests.get(page_url)
+    bs = BeautifulSoup(res.text, 'html.parser')
 
-data = bs.select('div.view_hd div.byline')
+    datas = bs.select('tbody tr')
 
-# time = re.search('[0-9]{4}[\.\-]?[0-9]{2}[\.\-]?[0-9]{2}', data).group()
+    for data in datas:
 
-print(data)
+        data_dict = {}
+
+        date = data.select('td.date')[0].text.strip()
+        num_data = data.select('td.num')[0].text.strip()
+
+        data_dict['date'] = date
+        data_dict['rate'] = num_data
+
+        data_list.append(data_dict)
+
+df = pd.DataFrame(data_list)
+print(df.head())
+df.to_json('cb_rate.json')
+# print(data_list)
