@@ -11,7 +11,7 @@ import sys
 # # JSON 파일로 저장하는 클래스
 class NaverNewsCrawlerPipeline(object):
     def __init__(self):
-        self.file = open("news_Crawl.json", 'wb')
+        self.file = open("news_Crawl_from20060101_200809011.json", 'wb')
         self.exporter = JsonItemExporter(self.file, encoding='utf-8')
         self.exporter.start_exporting()
 

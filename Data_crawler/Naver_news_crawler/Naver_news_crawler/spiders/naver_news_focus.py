@@ -42,8 +42,9 @@ class NewsFocusSpider(scrapy.Spider):
 
         for link, datas in zip(articles_link, articles_datas):
 
+            title = link.css('a::text').get()
             # 타이틀이 [표]로 시작하지 않으면
-            if link.css('a::text').get()[:3] != "[표]":
+            if title[:3] != "[표]":
 
                 # 타임 브레이커
                 time.sleep(self.time_break)
@@ -57,6 +58,7 @@ class NewsFocusSpider(scrapy.Spider):
                 request.meta['press'] = press
                 request.meta['date'] = date
                 request.meta['url'] = news_url
+                request.meta['title'] = title
 
                 yield request
 
@@ -97,6 +99,7 @@ class NewsFocusSpider(scrapy.Spider):
         yield {
             'date': response.meta['date'],
             'office': response.meta['press'],
+            'title': response.meta['title'],
             'url' : response.meta['url'],
 
             'text': re.sub('(\<[^\<\>]*\>)|▶[\s\S]+', ' ',
