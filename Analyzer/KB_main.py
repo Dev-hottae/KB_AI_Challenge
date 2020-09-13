@@ -126,7 +126,7 @@ def main():
         if training_args.do_train
         else None
     )
-    print(train_dataset)
+    # print(train_dataset)
 
     eval_dataset = (
         FinanceDataset(

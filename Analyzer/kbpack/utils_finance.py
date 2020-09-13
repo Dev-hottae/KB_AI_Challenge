@@ -131,5 +131,5 @@ def convert_texts_to_features(
 
 def get_label():
     '''Sentiment analysis negative/positive'''
-    return ['negative', 'positive']
-    # return [0, 1]
+    return ['negative', 'neutral', 'positive']
+    # return [0, 1, 2]
