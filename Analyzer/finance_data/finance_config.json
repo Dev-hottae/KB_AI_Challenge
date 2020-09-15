@@ -1,13 +1,1 @@
-{
-    "data_dir": "/home/lab10/JJC/KB_AI_Challenge/Analyzer/finance_data",
-    "model_name_or_path": "/home/lab10/JJC/KB_AI_Challenge/Analyzer/model",
-    "output_dir": "/home/lab10/JJC/KB_AI_Challenge/Analyzer/finance_outputs",
-    "max_seq_length": 128,
-    "num_train_epochs": 3,
-    "per_device_train_batch_size": 16,
-    "gradient_accumulation_steps": 1,
-    "save_steps": 5000,
-    "seed": 23,
-    "do_train": true,
-    "do_eval": true
-}
+{"data_dir": "C:\\Users\\dlagh\\PycharmProjects\\KB_AI_Challenge\\Analyzer/finance_data", "model_name_or_path": "C:\\Users\\dlagh\\PycharmProjects\\KB_AI_Challenge\\Analyzer/model", "output_dir": "C:\\Users\\dlagh\\PycharmProjects\\KB_AI_Challenge\\Analyzer/model_output", "max_seq_length": 128, "num_train_epochs": 3, "per_device_train_batch_size": 16, "gradient_accumulation_steps": 1, "save_steps": 5000, "seed": 23, "do_train": true, "do_eval": true}

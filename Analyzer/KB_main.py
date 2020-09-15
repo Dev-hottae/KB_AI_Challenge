@@ -1,4 +1,5 @@
 # 모델 학습
+import json
 import logging
 import os
 import sys
@@ -65,9 +66,26 @@ class DataTrainingArguments:
     )
 
 
-def main():
+def main(path, epochs=3, batch_size=16, save_steps=5000, text_line=1, label_line=2):
+
+    config_path = path + '/finance_data/finance_config.json'
+
+    # path 를 통해 config 파일 개인에게 맞게 수정
+    with open(config_path, "r") as jsonFile:
+        data = json.load(jsonFile)
+
+    data["data_dir"] = path + '/finance_data'
+    data["model_name_or_path"] = path + '/model'
+    data["output_dir"] = path + '/model_outputs'
+    data["num_train_epochs"] = epochs
+    data["per_device_train_batch_size"] = batch_size
+    data["save_steps"] = save_steps
+
+    with open(config_path, "w") as jsonFile:
+        json.dump(data, jsonFile)
+
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, TrainingArguments))
-    model_args, data_args, training_args = parser.parse_json_file(json_file='/home/lab10/JJC/KB_AI_Challenge/Analyzer/finance_data/finance_config.json')
+    model_args, data_args, training_args = parser.parse_json_file(json_file=config_path)
     # if len(sys.argv) == 2 and sys.argv[1].endswith(".json"):
     #     # If we pass only one argument to the script and it's the path to a json file,
     #     # let's parse it to get our arguments.
@@ -79,7 +97,8 @@ def main():
         os.path.exists(training_args.output_dir)
         and os.listdir(training_args.output_dir)
         and training_args.do_train
-        and not training_args.overwrite_output_dir
+        # output overwrite
+        and training_args.overwrite_output_dir
     ):
         raise ValueError(
             f"Output directory ({training_args.output_dir}) already exists and is not empty. Use --overwrite_output_dir to overcome."
@@ -121,12 +140,13 @@ def main():
             tokenizer=tokenizer,
             max_seq_len=data_args.max_seq_len,
             overwrite_cache=data_args.overwrite_cache,
-            mode=Split.train
+            mode=Split.train,
+            text_line=text_line,
+            label_line=label_line
         )
         if training_args.do_train
         else None
     )
-    # print(train_dataset)
 
     eval_dataset = (
         FinanceDataset(
@@ -134,7 +154,9 @@ def main():
             tokenizer=tokenizer,
             max_seq_len=data_args.max_seq_len,
             overwrite_cache=data_args.overwrite_cache,
-            mode=Split.test
+            mode=Split.test,
+            text_line=text_line,
+            label_line=label_line
         )
         if training_args.do_eval
         else None
@@ -188,4 +210,9 @@ def _mp_fn(index):
     main()
 
 if __name__ == "__main__":
-    main()
+
+    # 기본경로 설정
+    path = r'C:\Users\dlagh\PycharmProjects\KB_AI_Challenge\Analyzer'
+
+    # data 는 finance_data 디렉토리 아래 ooo_train.txt, ooo_test.txt 이름으로 저장
+    main(path, epochs=3, batch_size=16, save_steps=5000, text_line=2, label_line=3)
