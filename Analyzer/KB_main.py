@@ -213,4 +213,6 @@ if __name__ == "__main__":
 
     # 기본경로 설정
     path = r'C:\Users\dlagh\PycharmProjects\KB_AI_Challenge\Analyzer'
+
+    # data 는 finance_data 디렉토리 아래 ooo_train.txt, ooo_test.txt 이름으로 저장
     main(path, epochs=3, batch_size=16, save_steps=5000, text_line=2, label_line=3)
