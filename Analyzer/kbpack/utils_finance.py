@@ -5,6 +5,8 @@ import torch
 from torch.utils.data.dataset import Dataset
 from enum import Enum
 from typing import List, Optional, Union
+
+from tqdm import tqdm
 from transformers import InputExample, InputFeatures, PreTrainedTokenizer
 
 
@@ -29,6 +31,8 @@ class FinanceDataset(Dataset):
             max_seq_len: Optional[int] = None,
             overwrite_cache=False,
             mode: Split = Split.train,
+            text_line=1,
+            label_line=2
     ):
         cached_features_file = os.path.join(
             data_dir, "cached_{}_{}_{}".format(mode.value, tokenizer.__class__.__name__, str(max_seq_len)),
@@ -39,7 +43,7 @@ class FinanceDataset(Dataset):
             self.features = torch.load(cached_features_file)
         else:
             logger.info(f"Creating features from dataset file at {data_dir}")
-            texts = read_texts_from_file(data_dir, mode)
+            texts = read_texts_from_file(data_dir, mode, text_line, label_line)
             # TODO clean up all this to leverage built-in features of tokenizers
             self.features = convert_texts_to_features(
                 texts,
@@ -56,17 +60,23 @@ class FinanceDataset(Dataset):
         return self.features[i]
 
 
-def read_texts_from_file(data_dir, mode):
+def read_texts_from_file(data_dir, mode, text_line, label_line):
     if isinstance(mode, Split):
         mode = mode.value
+
     # 파일 이름에 따라 변경
-    file_path = os.path.join(data_dir, f"finance_{mode}.txt")
+    data_files = os.listdir(data_dir)
+    print(data_files)
+    mode_file = list(filter(lambda x: str(mode)+".txt" in x, data_files))[0]
+
+    file_path = os.path.join(data_dir, mode_file)
     fin_text = []
     with open(file_path, "r", encoding="utf-8") as r:
         reader = csv.reader(r, delimiter="\t")
         next(reader, None)
-        for guid_idx, line in enumerate(reader):
-            fin_text.append(InputExample(guid=f"{mode}-{guid_idx}", text_a=line[1], label=int(line[2])))
+        print("####{0}####load data####".format(mode))
+        for guid_idx, line in tqdm(enumerate(reader)):
+            fin_text.append(InputExample(guid=f"{mode}-{guid_idx}", text_a=line[text_line], label=int(line[label_line])))
     return fin_text
 
 
